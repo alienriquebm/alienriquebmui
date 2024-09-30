@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './button';
-import { Md10Mp } from 'react-icons/md';
 
 const meta: Meta<typeof Button> = {
   title: 'Design System/Button',
@@ -69,13 +68,13 @@ export const Small: Story = {
 export const WithLeftIcon: Story = {
   args: {
     children: 'Click me',
-    leftIcon: <Md10Mp />,
+    leftIcon: <div>😀</div>,
   },
 };
 
 export const WithRightIcon: Story = {
   args: {
     children: 'Click me',
-    rightIcon: <Md10Mp />,
+    rightIcon: <div>😀</div>,
   },
 };
