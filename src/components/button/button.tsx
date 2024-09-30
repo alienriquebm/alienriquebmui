@@ -17,8 +17,8 @@ export default function Button({
   ...restProps
 }: IButton & ButtonProps) {
   const buttonClasses = clsx(
-    'active:select-none whitespace-nowrap min-w- border border-primary-500 flex gap-2 items-center justify-center font-bold p-4 text-white bg-primary-500 hover:bg-primary-300 hover:border-primary-300 uppercase transition-all ease-out duration-200 tracking-wide text-base leading-6 rounded-md active:outline-none focus:outline-none focus-visible:outline-none',
-    buttonType !== 'normal' && 'active:!bg-primary-700 active:!border-primary-700',
+    'active:select-none whitespace-nowrap min-w- border border-red-500 flex gap-2 items-center justify-center font-bold p-4 text-white bg-red-500 hover:bg-red-300 hover:border-red-300 uppercase transition-all ease-out duration-200 tracking-wide text-base leading-6 rounded-md active:outline-none focus:outline-none focus-visible:outline-none',
+    buttonType !== 'normal' && 'active:!bg-red-700 active:!border-red-700',
     buttonType === 'normal' &&
       'border-slate-500 !text-slate-500 bg-transparent hover:!bg-slate-100 hover:!border-slate-400 active:!bg-slate-300 active:!border-slate-300',
     buttonType === 'dangerOutlined' &&
