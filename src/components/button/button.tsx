@@ -1,6 +1,6 @@
-import { clsx } from 'clsx';
 import { ButtonProps, Button as RAButton } from 'react-aria-components';
 import { IButton } from './button.interfaces';
+import cn from '../../helpers/cn';
 
 export default function Button({
   fullWidth,
@@ -16,7 +16,7 @@ export default function Button({
   rightIcon,
   ...restProps
 }: IButton & ButtonProps) {
-  const buttonClasses = clsx(
+  const buttonClasses = cn(
     'active:select-none whitespace-nowrap min-w- border border-red-500 flex gap-2 items-center justify-center font-bold p-4 text-white bg-red-500 hover:bg-red-300 hover:border-red-300 uppercase transition-all ease-out duration-200 tracking-wide text-base leading-6 rounded-md active:outline-none focus:outline-none focus-visible:outline-none',
     buttonType !== 'normal' && 'active:!bg-red-700 active:!border-red-700',
     buttonType === 'normal' &&
