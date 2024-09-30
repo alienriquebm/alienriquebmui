@@ -12,6 +12,7 @@
     "moduleResolution": "node",
     "outDir": "dist",
     "allowSyntheticDefaultImports": true
+    // "types": ["@testing-library/jest-dom"]
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "jest.config.ts", "jest.setup.ts"]
 }
