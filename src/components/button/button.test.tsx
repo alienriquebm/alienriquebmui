@@ -98,7 +98,7 @@ describe('Button', () => {
     });
     const button = getByRole('button');
     expect(button).toHaveClass(
-      'border-slate-500 !text-slate-500 bg-transparent hover:!bg-slate-100 hover:!border-slate-400 active:!bg-slate-300 active:!border-slate-300',
+      'border-slate-500 text-slate-500 bg-transparent hover:bg-slate-100 hover:border-slate-400 active:bg-slate-300 active:border-slate-300',
     );
   });
 
@@ -109,7 +109,7 @@ describe('Button', () => {
     });
     const button = getByRole('button');
     expect(button).toHaveClass(
-      'border-red-500 !text-red-500 bg-transparent hover:!bg-red-100 hover:!border-red-400 active:!bg-red-300 active:!border-red-300',
+      'border-red-500 text-red-500 bg-transparent hover:bg-red-100 hover:border-red-400 active:bg-red-300 active:border-red-300',
     );
   });
 
@@ -120,7 +120,7 @@ describe('Button', () => {
     });
     const button = getByRole('button');
     expect(button).toHaveClass(
-      'border-slate-600 bg-slate-500 hover:!bg-slate-400 hover:!border-slate-400 active:!bg-slate-300 active:!border-slate-300',
+      'border-slate-600 bg-slate-500 hover:bg-slate-400 hover:border-slate-400 active:bg-slate-300 active:border-slate-300',
     );
   });
 
