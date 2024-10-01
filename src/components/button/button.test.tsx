@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
-import Button from './button';
 import { IButton } from './button.interfaces';
+import { Button } from './button';
 
 const onPress = jest.fn();
 

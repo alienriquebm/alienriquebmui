@@ -1,2 +1,3 @@
 import './styles.css';
-export { default as Button } from './components/button';
+export { Button } from './components/button';
+export { Tooltip } from './components/tooltip';
