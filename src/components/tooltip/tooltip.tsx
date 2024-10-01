@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { MdInfo } from 'react-icons/md';
 import { Tooltip as RATooltip, TooltipTrigger, Button } from 'react-aria-components';
 
-import { ITooltip } from './tooltip.interfaces';
 import cn from '../../helpers/cn';
+import { ITooltip } from './tooltip.interfaces';
+import { InfoIcon } from '../../icons';
 
 export function Tooltip({
   children,
@@ -13,6 +13,7 @@ export function Tooltip({
   isOpen: controlledIsOpen,
   onOpenChange,
   dataCy,
+  icon = <InfoIcon className="text-slate-300" />,
   ...props
 }: ITooltip) {
   const [isOpen, setIsOpen] = useState(controlledIsOpen ?? false);
@@ -49,7 +50,7 @@ export function Tooltip({
         aria-describedby="tooltip-content"
         aria-label="Information"
       >
-        <MdInfo className="text-slate-300" />
+        {icon}
       </Button>
       <RATooltip {...props} placement={placement}>
         <div className={helpClasses}>

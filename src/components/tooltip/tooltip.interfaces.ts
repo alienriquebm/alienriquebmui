@@ -6,4 +6,5 @@ export interface ITooltip extends Omit<TooltipProps, 'children'> {
   children?: React.ReactNode;
   placement?: 'top' | 'bottom';
   dataCy?: string;
+  icon?: React.ReactNode;
 }
