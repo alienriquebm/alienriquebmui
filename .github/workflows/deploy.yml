@@ -22,13 +22,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run tests
+        run: npm test
+
       - name: Build the project
         run: |
           rm -rf dist
           npm run build
-
-      - name: Check version
-        run: cat package.json | grep version
 
       - name: Configure Git
         run: |
@@ -39,7 +39,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm version patch -m "Upgrade version to %s" || echo "No version change"
-          git add package.json
-          git commit -m "Bump version" || echo "No changes to commit"
+          npm version patch -m "Upgrade version to %s"
           npm publish --access public
