@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Tag from './tag';
+import { Tag } from './tag';
 
 const tagRender = ({
   leftIcon,
