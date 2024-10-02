@@ -6,6 +6,18 @@ on:
       - main
 
 jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          run: |
+            git config user.name "GitHub Action"
+            git config user.email "action@github.com"
+      - run: npm version patch -m "[RELEASE] %s"
+      - run: git push
+
   deploy:
     runs-on: ubuntu-latest
 
@@ -38,14 +50,7 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
 
-      - name: Commit changes if any
-        run: |
-          git add .
-          git commit -m "Automated commit before versioning" || echo "No changes to commit"
-
       - name: Bump version and publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          npm version patch -m "Upgrade version to %s"
-          npm publish --access public
+        run: npm publish --access public
