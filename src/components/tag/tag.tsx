@@ -6,7 +6,6 @@ export function Tag({ children, className, dataCy, leftIcon, rightIcon }: ITag) 
     'text-sm border border-slate-500 px-4 py-2 rounded-lg flex items-center gap-2',
     className,
   );
-
   return (
     <span data-cy={dataCy} className={tagClasses}>
       {leftIcon && <span>{leftIcon}</span>}
