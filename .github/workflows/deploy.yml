@@ -8,13 +8,12 @@ on:
 jobs:
   version:
     runs-on: ubuntu-latest
-    steps:
+   steps:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-      - run: |
-          git config user.name "GitHub Action"
-          git config user.email "action@github.com"
+      - run: git config --global user.name 'GitHub Action'
+      - run: git config --global user.email 'action@github.com'
       - run: npm version patch -m "[RELEASE] %s"
       - run: git push
 
