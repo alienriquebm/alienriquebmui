@@ -2,7 +2,7 @@ import { ButtonProps, Button as RAButton } from 'react-aria-components';
 import { IButton } from './button.interfaces';
 import cn from '../../helpers/cn';
 
-export default function Button({
+export function Button({
   fullWidth,
   buttonType,
   children,
