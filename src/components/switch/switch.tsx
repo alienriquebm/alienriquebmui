@@ -1,8 +1,8 @@
-import clsx from 'clsx';
 import { Switch as RASwitch, SwitchProps } from 'react-aria-components';
+import cn from '../../helpers/cn';
 
 export function Switch({ className, ...restProps }: SwitchProps) {
-  const raSwitchClasses = clsx('cursor-pointer flex items-center gap-2', className);
+  const raSwitchClasses = cn('cursor-pointer flex items-center gap-2', className);
 
   return (
     <RASwitch className={raSwitchClasses} {...restProps}>
