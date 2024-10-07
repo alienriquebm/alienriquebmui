@@ -10,6 +10,7 @@ import {
 import cn from '../../helpers/cn';
 
 import { ISelect } from './select.interfaces';
+import { SelectIcon } from './select-icon';
 
 export function Select<T extends object>({
   description,
@@ -42,11 +43,11 @@ export function Select<T extends object>({
             />
 
             <span
-              className={cn('transition-transform duration-200 ease-in-out flex-shrink-0', {
-                'rotate-45': isOpen,
+              className={cn('transition-transform duration-200 ease-in-out flex-shrink-0 ml-1', {
+                'rotate-180': isOpen,
               })}
             >
-              ▼
+              <SelectIcon />
             </span>
           </Button>
           {description && <Text slot="description">{description}</Text>}
