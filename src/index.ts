@@ -1,10 +1,8 @@
 import './styles.css';
 
-export { InfoIcon } from './icons';
-export { UserIcon } from './icons';
-
 export { Avatar, AvatarSize } from './components/avatar';
 export { Button } from './components/button';
+export { Checkbox } from './components/checkbox';
 export { Card } from './components/card';
 export { Collapsible } from './components/collapsible';
 export { ConfirmationModal } from './components/confirmation-modal';
