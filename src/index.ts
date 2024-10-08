@@ -1,6 +1,7 @@
 import './styles.css';
 
 export { InfoIcon } from './icons';
+export { UserIcon } from './icons';
 
 export { Avatar, AvatarSize } from './components/avatar';
 export { Button } from './components/button';
@@ -11,6 +12,7 @@ export { Select } from './components/select';
 export { SelectItem } from './components/select/select-item';
 export { Spinner } from './components/spinner';
 export { Switch } from './components/switch';
+export { Table } from './components/table';
 export { Tag } from './components/tag';
 export { Textarea } from './components/textarea';
 export { Tooltip } from './components/tooltip';
