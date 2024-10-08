@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Checkbox } from './checkbox';
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Design System/Checkbox',
+  title: 'Design System/Checkbox NEW',
   component: Checkbox,
   parameters: {
     layout: 'centered',
@@ -14,9 +14,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {},
-};
+export const Default: Story = {};
 
 export const Disabled: Story = {
   args: {
@@ -27,6 +25,5 @@ export const Disabled: Story = {
 export const DefaultSelected: Story = {
   args: {
     defaultSelected: true,
-    isSelected: true,
   },
 };

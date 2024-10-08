@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
-import { Checkbox } from './checkbox';
 import { CheckboxProps } from 'react-aria-components';
+import { Checkbox } from './checkbox';
 
 type ICheckbox = CheckboxProps & { error?: string; disabled?: boolean };
 
@@ -67,7 +67,7 @@ describe('Checkbox', () => {
 
     const checkboxWrapper = getByTestId('checkbox-wrapper');
 
-    expect(checkboxWrapper).toHaveClass('border-red-500');
+    expect(checkboxWrapper).toHaveClass('!border-red-500');
   });
 
   it('should render disabled-related classes when disabled is true', () => {
@@ -78,7 +78,7 @@ describe('Checkbox', () => {
     const checkboxWrapper = getByTestId('checkbox-wrapper');
 
     expect(checkboxWrapper).toHaveClass(
-      'border-slate-400 group-selected:bg-slate-400 group-selected:border-slate-400 group-selected:bg-slate-400 group-selected:border-slate-400',
+      '!border-slate-400 group-selected:!bg-slate-400 group-selected:!border-slate-400 group-selected:!bg-slate-400 group-selected:!border-slate-400',
     );
   });
 });
