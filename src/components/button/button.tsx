@@ -17,7 +17,7 @@ export function Button({
   ...restProps
 }: IButton & ButtonProps) {
   const buttonClasses = cn(
-    'active:select-none whitespace-nowrap min-w- border border-blue-500 flex gap-2 items-center justify-center font-bold p-4 text-white bg-blue-500 hover:bg-blue-300 hover:border-blue-300 uppercase transition-all ease-out duration-200 tracking-wide text-base leading-6 rounded-md active:outline-none focus:outline-none focus-visible:outline-none',
+    'active:select-none whitespace-nowrap border border-blue-500 flex gap-2 items-center justify-center font-bold p-4 text-white bg-blue-500 hover:bg-blue-300 hover:border-blue-300 uppercase transition-all ease-out duration-200 tracking-wide text-base leading-6 rounded-md active:outline-none focus:outline-none focus-visible:outline-none',
     buttonType !== 'normal' && 'active:bg-blue-700 active:border-blue-700',
     buttonType === 'normal' &&
       'border-slate-500 text-slate-500 bg-transparent hover:bg-slate-100 hover:border-slate-400 active:bg-slate-300 active:border-slate-300',
