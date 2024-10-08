@@ -15,48 +15,67 @@ const meta: Meta<ISelect<ItemType>> = {
     layout: 'centered',
   },
   tags: ['autodocs'],
+  argTypes: {
+    border: {
+      control: 'boolean',
+      description: 'Toggles the border of the Select component',
+    },
+  },
 };
 
 export default meta;
 
 type Story = StoryObj<ISelect<ItemType>>;
 
+const items = [
+  { id: 1, name: 'Option 1' },
+  { id: 2, name: 'Option 2' },
+  { id: 3, name: 'Option 3' },
+];
+
+const renderItems = (item: ItemType) => <SelectItem key={item.id}>{item.name}</SelectItem>;
+
 export const Default: Story = {
   args: {
     description: 'Select an option',
-    items: [
-      { id: 1, name: 'Option 1' },
-      { id: 2, name: 'Option 2' },
-      { id: 3, name: 'Option 3' },
-    ],
+    items: items,
     isDisabled: false,
-    children: (item: ItemType) => <SelectItem key={item.id}>{item.name}</SelectItem>,
+    children: renderItems,
   },
 };
 
 export const Disabled: Story = {
   args: {
     description: 'Component disabled',
-    items: [
-      { id: 1, name: 'Option 1' },
-      { id: 2, name: 'Option 2' },
-      { id: 3, name: 'Option 3' },
-    ],
+    items: items,
     isDisabled: true,
-    children: (item: ItemType) => <SelectItem key={item.id}>{item.name}</SelectItem>,
+    children: renderItems,
   },
 };
 
-export const WithErrorMessage: Story = {
+export const WithoutBorder: Story = {
   args: {
+    description: 'Select without border',
+    items: items,
     isDisabled: false,
-    description: 'Select an option',
-    errorMessage: 'This field is mandatory',
-    items: [
-      { id: 1, name: 'Option 1' },
-      { id: 2, name: 'Option 2' },
-      { id: 3, name: 'Option 3' },
-    ],
-    children: (item: ItemType) => <SelectItem key={item.id}>{item.name}</SelectItem>,
+    children: renderItems,
+    border: false,
+  },
+};
+
+export const BorderVariants: Story = {
+  render: args => (
+    <div className="space-y-4">
+      <Select {...args} description="With border (default)" border={true}>
+        {renderItems}
+      </Select>
+      <Select {...args} description="Without border" border={false}>
+        {renderItems}
+      </Select>
+    </div>
+  ),
+  args: {
+    items: items,
+    isDisabled: false,
   },
 };

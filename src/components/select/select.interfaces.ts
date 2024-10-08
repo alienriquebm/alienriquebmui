@@ -8,4 +8,5 @@ export interface ISelect<T extends object> extends Omit<SelectProps<T>, 'childre
   items?: Iterable<T>;
   dataCy?: string;
   children?: React.ReactNode | ((item: T) => React.ReactNode);
+  border?: boolean;
 }

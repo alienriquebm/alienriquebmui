@@ -6,9 +6,7 @@ import {
   SelectValue,
   Text,
 } from 'react-aria-components';
-
 import cn from '../../helpers/cn';
-
 import { ISelect } from './select.interfaces';
 import { SelectIcon } from './select-icon';
 
@@ -19,12 +17,16 @@ export function Select<T extends object>({
   isDisabled,
   dataCy,
   ariaLabel,
+  border = true,
   ...restProps
 }: ISelect<T>) {
   const inputClasses = cn(
-    'flex w-full py-1 px-4 justify-between items-center rounded-md text-base text-slate-500 border-slate-500 bg-white font-regular placeholder-gray-400 bg-white [&[data-focus-visible]]:border-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-shadow duration-200 ease-in-out',
-    isDisabled && '!bg-slate-100 !text-slate-400 cursor-not-allowed',
+    'flex w-full py-2 px-4 justify-between items-center rounded-md text-base text-slate-700 bg-white font-regular placeholder-gray-400 [&[data-focus-visible]]:ring-2 [&[data-focus-visible]]:ring-primary-500 focus:outline-none transition-all duration-200 ease-in-out',
+    border ? 'border border-slate-300' : 'border-none',
+    isDisabled ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'hover:border-slate-400',
   );
+
+  const descriptionClasses = 'text-sm text-slate-500 mt-1';
 
   return (
     <RASelect
@@ -41,21 +43,24 @@ export function Select<T extends object>({
               className="whitespace-nowrap overflow-hidden text-ellipsis [&[data-placeholder]]:text-slate-400"
               data-cy={dataCy}
             />
-
             <span
-              className={cn('transition-transform duration-200 ease-in-out flex-shrink-0 ml-1', {
+              className={cn('transition-transform duration-200 ease-in-out flex-shrink-0 ml-2', {
                 'rotate-180': isOpen,
               })}
             >
               <SelectIcon />
             </span>
           </Button>
-          {description && <Text slot="description">{description}</Text>}
+          {description && (
+            <Text slot="description" className={descriptionClasses}>
+              {description}
+            </Text>
+          )}
           {!isDisabled && (
-            <Popover offset={2} data-testid="select-popover">
+            <Popover offset={4} data-testid="select-popover">
               <ListBox
                 items={items}
-                className="w-[--trigger-width] bg-white py-2 rounded-md shadow-2xl animate-in fade-in duration-200 [&[data-focus-visible]]:border-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                className="w-[--trigger-width] bg-white py-2 rounded-md shadow-lg border border-slate-200 animate-in fade-in duration-200 focus:outline-none"
               >
                 {children}
               </ListBox>
