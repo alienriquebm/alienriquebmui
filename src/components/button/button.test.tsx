@@ -88,7 +88,7 @@ describe('Button', () => {
       size: 'small',
     });
     const button = getByRole('button');
-    expect(button).toHaveClass('py-2 text-xs leading-none');
+    expect(button).toHaveClass('h-8 text-xs');
   });
 
   it('should apply the normal button type', () => {
